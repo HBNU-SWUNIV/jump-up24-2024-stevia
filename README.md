@@ -26,7 +26,7 @@
 <br/><br/>
  - 시스템 프로세스 흐름도
 <br/><br/>
-<img width="50%" alt="시스템 프로세스 흐름도" src="https://github.com/user-attachments/assets/53b7e017-507d-4c74-b556-94898ce50668">
+<img width="50%" alt="시스템 프로세스 흐름도" src="https://github.com/user-attachments/assets/0e85e3aa-fd13-4e9b-9deb-5860af2c9510">
 <br/><br/>
 
  - ### System Requirements
@@ -50,5 +50,13 @@
 <br/><br/>
 
 - ### MAIN 서버
+  - 강의실 예약 시 요청 및 응답, 저장 정보
+    <p>
+    <img width="50%" alt="응답" src="https://github.com/user-attachments/assets/a95aed67-2a36-4010-8a56-b88f08ab5f4d">
+    <img width="50%" alt="저장" src="https://github.com/user-attachments/assets/6d37cc9b-c13f-468a-a1cc-51d27dbad3c0">
+    </p>	
+    
+- ### Arduino 결과
+  ![사물함](https://github.com/user-attachments/assets/0290d73b-d0b2-4cf1-a631-c4d086c727d0)
 ## Project Outcome
 
