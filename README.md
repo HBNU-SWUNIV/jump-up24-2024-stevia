@@ -59,4 +59,4 @@
 - ### Arduino 결과
   ![사물함](https://github.com/user-attachments/assets/0290d73b-d0b2-4cf1-a631-c4d086c727d0)
 ## Project Outcome
-
+(논문 심사 후 등록 예정)
