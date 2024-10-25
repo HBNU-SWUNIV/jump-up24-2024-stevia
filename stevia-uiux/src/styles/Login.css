@@ -1,0 +1,88 @@
+.login-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px  70px 30px 30px 55px;
+    grid-template-areas:
+        'a'
+        'b'
+        'c'
+        'd'
+        'e';
+    place-items: end center;
+    justify-content: center;
+    grid-gap: 10px;
+
+}
+
+.background-img {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: 320px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-attachment: fixed;*/
+
+}
+
+.student_id {
+    grid-area: b;
+    /*align-items: end;*/
+}
+
+.password {
+    grid-area: c;
+    justify-items: center;
+    align-self: start;
+
+}
+
+
+.logo-img {
+    padding-left: 20px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    grid-area: a;
+    justify-items: center;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 220px;
+    height: 17px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #DDE1FA;
+    border-radius: 30px;
+}
+
+.find-password {
+    place-items: center end;
+    color: #97B4D9;
+    grid-area: d;
+    font-size: 12px;
+    padding-left: 85px;
+
+}
+
+button {
+    background-color: #283A69;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 40px;
+    cursor: pointer;
+    grid-area: e;
+    justify-items: center;
+}
+
+button:hover {
+    background-color: black;;
+}
