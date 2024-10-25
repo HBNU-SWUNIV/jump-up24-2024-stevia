@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Key {
+  rfidSerialNo     String   @id @unique @map("rfid_serial_no") @db.VarChar(64)
+  roomNo           Int      @map("room_no") @db.Integer
+  buildingLocation String   @map("building_location") @db.VarChar(30)
+  Status           Status[]
+}
+
+model Status {
+  id           String     @id @unique @default(uuid()) @db.Uuid
+  keyStatus    KeyStatus  @map("key_status")
+  doorStatus   DoorStatus @map("door_status")
+  createdAt    DateTime   @default(dbgenerated("timezone('Asia/Seoul' :: text, now())")) @map("created_at")
+  rfidSerialNo String     @map("rfid_serial_no") @db.VarChar(64)
+  Key          Key        @relation(fields: [rfidSerialNo], references: [rfidSerialNo], onDelete: Cascade)
+}
+
+enum KeyStatus {
+  EXIST
+  NOT_EXIST
+}
+
+enum DoorStatus {
+  OPEN
+  CLOSE
+}
