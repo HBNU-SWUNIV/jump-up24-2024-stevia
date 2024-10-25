@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id          String        @id @default(uuid()) @db.Uuid
+  student_id  Int           @unique @db.Integer
+  password    String        @db.VarChar(128)
+  name        String        @db.VarChar(20)
+  department  String        @db.VarChar(20)
+  phone_no    String        @db.VarChar(15)
+  email       String        @unique @db.VarChar(254)
+  reservation reservation[]
+}
+
+model building_room {
+  id                String        @id @default(uuid()) @db.Uuid
+  building_location String        @db.VarChar(20)
+  building_name     String        @db.VarChar(20)
+  room_no           Int           @db.Integer
+  room_image_url    String        @db.Text
+  reservation       reservation[]
+}
+
+model reservation {
+  id           String        @id @default(uuid()) @db.Uuid
+  usage_time   String        @db.VarChar(20)
+  reserve_time DateTime      @db.Timestamp()
+  reserver     user          @relation(fields: [reserver_id], references: [id])
+  reserver_id  String        @db.Uuid
+  room         building_room @relation(fields: [room_id], references: [id])
+  room_id      String        @db.Uuid
+}
+
+model admin {
+  id       String @id @default(uuid()) @db.Uuid
+  admin_id Int    @unique @db.Integer
+  password String @db.VarChar(128)
+}
